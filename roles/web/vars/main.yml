@@ -1,0 +1,5 @@
+package: nginx
+my_message: Hello From NTIii
+files_list:
+- file.css
+- file.js

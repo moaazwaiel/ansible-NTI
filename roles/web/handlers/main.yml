@@ -1,0 +1,13 @@
+- name: my_handler
+  copy:
+    src: "./{{item}}"
+    dest: "/home/ansible/{{item}}"
+  loop:
+  - file.css
+  - file.js
+  changed_when: true
+  notify: my_handler2
+- name: my_handler2
+  sysvinit:
+    name: "{{package}}"
+    state: restarted  

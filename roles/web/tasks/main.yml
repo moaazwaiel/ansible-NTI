@@ -1,0 +1,12 @@
+- name: package_hunter
+  apt:
+    name: "{{package}}"
+    state: latest
+  notify: my_handler
+  changed_when: true
+- name: my template
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+  changed_when: true
+  notify: my_handler2
